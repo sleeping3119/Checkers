@@ -160,7 +160,7 @@ int main()
 	position from{}, to{};
 	char** B = nullptr;
 	string names[2]{};
-	B = init(dim, turn, "Text.txt", names);
+	B = init(dim, turn, "load.txt", names);
 	printBoard(B, dim);
 	do {
 		printTurn(names, turn);
@@ -181,7 +181,10 @@ char** init(int& dim, int& turn, string a, string name[]) {
 	cin >> name[1];
 	srand((unsigned)time(0));
 	turn = abs(rand() % 2);
-
+	/*if (!rdr) {
+		cout << "txt file not found";
+		exit(_getch());
+	}*/
 	rdr >> dim;
 	char** B = new char* [dim] {};
 	for (int i = 0; i < dim; i++) {
