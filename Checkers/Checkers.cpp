@@ -143,6 +143,7 @@ int selectMove(position f, position& t, int dim, int turn, char** B) {
 		selectPiece(turn, f, t, dim, B); return 0;
 	}
 	prompt(red, " \b", 0, dim);
+	return 1;
 }
 void updateB(char** B, position a, position b) {
 	char ch = B[a.r][a.c];
